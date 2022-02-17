@@ -1,0 +1,22 @@
+.menu{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 60px;
+  background-color: rgb(12, 117, 238);
+}
+
+.menu a{
+  text-decoration:none;
+  color: black;
+}
+
+.menu-select a{
+  color: white;
+}
+
+.menu-item{
+  font-size: 25px;
+  color: black;
+  padding: 0 20px;
+}
