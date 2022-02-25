@@ -1,6 +1,7 @@
-import About from "../views/about"
-import Adress from "../views/adress"
-import SVG from "../views/svg"
+import About from "@/views/about"
+import Adress from "@/views/adress"
+import SVG from "@/views/svg"
+import MobxDemo from "@/views/mobxdemo"
 
 const route=[
   {
@@ -14,6 +15,10 @@ const route=[
   {
     path:'/svg',
     component:SVG,
+  },
+  {
+    path:'/mobxdemo',
+    component:MobxDemo,
   },
 ]
  
