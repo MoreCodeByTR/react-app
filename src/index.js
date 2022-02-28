@@ -11,13 +11,11 @@ import reportWebVitals from "./reportWebVitals"
 //需要将Router放在最外层，才能使用useLoaction
 
 ReactDOM.render(
-  <React.StrictMode>
     <Provider {...store}>
     <Router>
       <Home />
     </Router>
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById("root")
 )
 

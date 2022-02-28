@@ -1,0 +1,21 @@
+.form-container{
+  border: 1px green solid;
+  width: 800px;
+}
+
+.lower{
+  margin-top: 5px;
+}
+
+.item-split-line{
+margin: 10px 20px;
+height: 1px;
+background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 90%);
+background-size: 8px 1px;
+background-repeat: repeat-x;
+}
+
+.item-split-line2{
+  margin: 10px 20px;
+  border: 1px dashed #ccc;
+  }
