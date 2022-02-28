@@ -1,6 +1,7 @@
 import React from "react"
 import { inject, observer } from "mobx-react"
 import { DatePicker } from "antd"
+import Adress from "./adress"
 import moment from "moment"
 
 const { RangePicker } = DatePicker
@@ -9,6 +10,9 @@ const dateFormat = "YYYY-MM-DD"
 @inject("info", "contract")
 @observer
 class MobxDemo extends React.Component {
+
+
+
   onChange = (m, s) => {
     const {
       contract: { updateTime },
@@ -17,6 +21,7 @@ class MobxDemo extends React.Component {
     updateTime(s)
   }
 
+  
   render() {
     const {
       info: { name, age },
@@ -24,7 +29,7 @@ class MobxDemo extends React.Component {
     } = this.props
     return (
       <>
-        <p>123</p>
+       <Adress name={name} adress="月球"/>
         {name}
         {age}
         <br />
