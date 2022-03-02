@@ -1,16 +1,18 @@
-import About from "@/views/about"
-import Adress from "@/views/adress"
+import React from "react"
+// import About from "@/views/about"
+// import Adress from "@/views/adress"
 import SVG from "@/views/svg"
 import MobxDemo from "@/views/mobxdemo"
 
 const route=[
   {
     path:'/about',
-    component:About,
+    //react 懒加载
+    component:React.lazy(() => import('@/views/about')),
   },
   {
     path:'/adress',
-    component:Adress,
+    component:React.lazy(() => import('@/views/adress')),
   },
   {
     path:'/svg',

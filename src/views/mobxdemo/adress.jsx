@@ -1,14 +1,29 @@
 import React from "react"
-function Adress(props) {
+class Adress extends React.Component{
 
-  //props属性为readonly
+  constructor(props) {
+    super(props);
+    this.state = {numbers: [1,2,3,4,5]};
+  }
 
-  return (
-    <>
-      <h1>{props.name}</h1>
-      <p>{props.adress}</p>
-    </>
-  )
+  text=React.createRef()
+
+  focusInput=()=>{
+    this.text.current.focus()
+  }
+
+  render(){
+    return (
+      <>
+        <h1>{this.props.name}</h1>
+        <p>{this.props.adress}</p>
+        <input type="text" ref={this.text}/>
+        <button onClick={this.focusInput}>聚焦输入</button>
+        <br/>
+      </>
+    )
+  }
+
 }
 
 export default Adress

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from 'react';
 import { useEffect } from "react"
 import { Route, Link,Redirect,useLocation ,Switch} from "react-router-dom"
 import { ConfigProvider,Layout, Menu,message } from "antd"
@@ -32,14 +32,16 @@ function Home(props) {
           </Menu>
         </Header>
         <Content>
-          <Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
           {route.map((item)=>{
-            return( <Route key={item.path} path={item.path} render={props => <item.component {...props}  />
+            return( <Route key={item.path} path={item.path} render={props => <item.component  {...props}  />
             }  />)
            
           })}
             <Redirect from="/*" to='/about'/>
           </Switch>
+          </Suspense>
         </Content>
       </Layout>
       </ConfigProvider>

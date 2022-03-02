@@ -29,7 +29,10 @@ class MobxDemo extends React.Component {
     } = this.props
     return (
       <>
-       <Adress name={name} adress="月球"/>
+       <Adress name={name} adress="月球">
+         <button>click me</button>
+         <br/>
+       </Adress>
         {name}
         {age}
         <br />
