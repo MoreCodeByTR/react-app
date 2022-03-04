@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense ,Profiler} from 'react';
 import { useEffect } from "react"
 import { Route, Link,Redirect,useLocation ,Switch} from "react-router-dom"
 import { ConfigProvider,Layout, Menu,message } from "antd"
@@ -16,7 +16,21 @@ function Home(props) {
   useEffect(()=>{
     message.success(`页面切换到${location.pathname}`)
   },[location.pathname])
+
+  function onRenderCallback(
+    id, // 发生提交的 Profiler 树的 “id”
+    phase, // "mount" （如果组件树刚加载） 或者 "update" （如果它重渲染了）之一
+    actualDuration, // 本次更新 committed 花费的渲染时间
+    baseDuration, // 估计不使用 memoization 的情况下渲染整颗子树需要的时间
+    startTime, // 本次更新中 React 开始渲染的时间
+    commitTime, // 本次更新中 React committed 的时间
+    interactions // 属于本次更新的 interactions 的集合
+  ) {
+   console.log(id,phase,actualDuration,baseDuration,startTime,commitTime,interactions)
+  }
+
   return (
+    <Profiler id="Panel" onRender={onRenderCallback}>
     <ConfigProvider locale={zhCN}>
       <Layout>
         <Header>
@@ -45,6 +59,7 @@ function Home(props) {
         </Content>
       </Layout>
       </ConfigProvider>
+      </Profiler>
   )
 }
 
