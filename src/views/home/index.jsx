@@ -29,6 +29,7 @@ function Home(props) {
             </Menu.Item>
             <Menu.Item key="/svg">  <Link to="/svg">SVG</Link></Menu.Item>
             <Menu.Item key="/mobxdemo">  <Link to="/mobxdemo">Mobx</Link></Menu.Item>
+            <Menu.Item key="/antd">  <Link to="/antd">Antd</Link></Menu.Item>
           </Menu>
         </Header>
         <Content>

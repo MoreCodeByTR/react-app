@@ -1,6 +1,7 @@
 import React from "react"
 import { inject, observer } from "mobx-react"
 import { DatePicker, message } from "antd"
+import Location from "./Location"
 import moment from "moment"
 
 const { RangePicker } = DatePicker
@@ -8,8 +9,17 @@ const dateFormat = "YYYY-MM-DD"
 @inject("contract")
 @observer
 class Adress extends React.Component {
+  constructor(){
+    super()
+    this.state={location:'马房山之王'}
+  }
 
-  onChange(e) {
+  componentDidMount(){
+
+  }
+
+  onChange=(e)=>{
+    this.setState({location:e.target.value})
     message.info(e.target.value)
     if (e.target.value==='123') {
       e.target.setCustomValidity("请输入100以内的正整数"); 
@@ -25,6 +35,7 @@ class Adress extends React.Component {
   return (
     <>
       <h1>Adress</h1>
+      <Location location={this.state.location}/>
       <form>
           <input
             id="input"
@@ -33,7 +44,6 @@ class Adress extends React.Component {
           />
           <button type="submit">Submit</button>
         </form>
-      <p>湖北省武汉市马房山大道</p>
       {dateArray.map((item, index) => {
           const { startTime, endTime } = item
           return <div style={{marginTop:'20px'}} key={startTime}>
