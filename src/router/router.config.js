@@ -2,6 +2,7 @@ import About from "@/views/about"
 import Adress from "@/views/adress"
 import SVG from "@/views/svg"
 import MobxDemo from "@/views/mobxdemo"
+import Demo from "@/views/demo"
 
 const route=[
   {
@@ -19,6 +20,10 @@ const route=[
   {
     path:'/mobxdemo',
     component:MobxDemo,
+  },
+  {
+    path:'/demo',
+    component:Demo,
   },
 ]
  
